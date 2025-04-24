@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clothing Store </title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0px;
+      background-color: #d6f5f9;
+      
+    }
+    .navbar {
+      background-color: #1c32f4;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-icon {
+      font-size: 3.8rem;
+      cursor: pointer;
+      position: relative;
+      
+    }
+    .cart-count {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: rgb(40, 44, 92);
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 18px;
+    }
+    .container {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 200px;
+      padding: 4rem;
+      text-align: center;
+    }
+    .item img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .item h3 {
+      margin: 0.5rem 0 0.3rem;
+      padding: auto;
+    }
+    .item p {
+      margin: 0.2rem 0;
+      padding: AUTO;
+    }
+    .item button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #06626b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h2> Clothing</h2>
+    <div class="cart-icon" onclick="alert('Cart clicked! Add your logic here')">
+      🛒 <span class="cart-count">0</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="item" data-price="799">
+      <img src="https://i.pinimg.com/736x/28/94/6c/28946c5ad25bba36683535231dbe9379.jpg" alt="" />
+      <h3>TOP</h3>
+      <p>₹799</p>
+      <button onclick="addToCart(799)">Add to Cart</button>
+    </div>
+    <div class="item" data-price="1299">
+      <img src="https://i.pinimg.com/736x/20/d0/a0/20d0a05ca6e49568c221e5c99b770328.jpg" alt="Jacket" />
+      <h3>Festive Jacket</h3>
+      <p>₹1299</p>
+      <button onclick="addToCart(1299)">Add to Cart</button>
+    </div>
+    <div class="item" data-price="599">
+      <img src="https://i.pinimg.com/736x/10/53/db/1053db75f288507f960c46748793df7a.jpg" alt="T-shirt" />
+      <h3> T-shirt</h3>
+      <p>₹599</p>
+      <button onclick="addToCart(599)">Add to Cart</button>
+    </div>
+    <div class="item" data-price="599">
+      <img src="https://i.pinimg.com/736x/ee/26/23/ee26232fcf0da9cbd3e5e63d16314a37.jpg" alt="T-shirt" />
+      <h3>korean style</h3>
+      <p>₹3100</p>
+      <button onclick="addToCart(3100)">Add to Cart</button>
+    </div>
+  </div>
+
+ 
+
+  <script>
+    let totalItems = 0;
+    let totalPrice = 0;
+
+    function addToCart(price) {
+      totalItems++;
+      totalPrice += price;
+      document.querySelector('.cart-count').textContent = totalItems;
+      document.getElementById('item-count').textContent = totalItems;
+    }
+  </script>
+</body>
+</html>
